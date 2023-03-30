@@ -6716,6 +6716,17 @@ ZimBotInc.sendMessage(m.chat, {image: {url: anu},viewOnce : true},{quoted: m })
     }
     break   
 		case 'menu':{
+			ZimBotInc.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+let Levelnye = level.getLevelingLevel(m.sender, _level)
+let datane = fs.readFileSync('./lib/random.js')
+jsonData = JSON.parse(datane)
+randIndex = Math.floor(Math.random() * jsonData.length)
+randKey = jsonData[randIndex];
+buffer = await getBuffer(randKey.result)      
+let Levele2 = level.getLevelingLevel(m.sender, _level)
+let Xp1 = level.getLevelingXp(m.sender, _level)
+let Xp2 = randomNomor(2000)       
+let hao = randomNomor(200)
 		m.reply(`*✧ᴜᴘᴛɪᴍᴇ: ${runtime(process.uptime())}*
 ╭━━━━━━━━━━━━━━━━━━╮
 ┃         ${global.botname}
